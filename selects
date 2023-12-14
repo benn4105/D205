@@ -19,3 +19,55 @@ from customer c
 		on c.customer_id = s.customer_id
 where s.internetservice = 'None'
 and c.techie = 'Yes'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select 'techies w/ techsupport', count(c.techie)
+from customer c
+	inner join services_csv s
+		on c.customer_id = s.customer_id
+where c.techie = 'Yes'
+and techsupport = 'Yes'
+
+union all
+
+select 'techies w/o techsupport', count(c.techie)
+from customer c
+	inner join services_csv s
+		on c.customer_id = s.customer_id
+where c.techie = 'Yes'
+and techsupport = 'No'
+
+union all
+
+select count(s.techsupport)
+from customer c
+	inner join services_csv s
+		on c.customer_id = s.customer_id
+where techsupport = 'Yes'
+
+select count(s.techsupport)
+from customer c
+	inner join services_csv s
+		on c.customer_id = s.customer_id
+where techsupport = 'No'
