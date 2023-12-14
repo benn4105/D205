@@ -1,0 +1,23 @@
+CREATE TABLE public.services_csv
+(
+		Customer_Id 		text NOT NULL,
+		InternetService 	text,
+		Phone 			varchar(3),
+		Multiple		varchar(3),
+		OnlineSecurity		varchar(3),
+		OnlineBackup		varchar(3),
+		DeviceProtection	varchar(3),
+		TechSupport		varchar(3),
+CONSTRAINT services_csv_PK PRIMARY KEY (Customer_Id)
+);
+ALTER TABLE public.services_csv
+OWNER TO POSTGRES;
+
+
+
+
+COPY services_csv
+FROM ‘C:\LabFiles\Services.csv’
+DELIMITER ‘,’
+CSV HEADER;
+
