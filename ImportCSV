@@ -1,0 +1,4 @@
+COPY services_csv
+FROM 'C:\LabFiles\Services.csv'
+DELIMITER ','
+CSV HEADER;

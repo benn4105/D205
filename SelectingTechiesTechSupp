@@ -1,0 +1,15 @@
+select 'techies w/ techsupport', count(c.techie)
+from customer c
+	inner join services_csv s
+		on c.customer_id = s.customer_id
+where c.techie = 'Yes'
+and techsupport = 'Yes'
+
+union all
+
+select 'techies w/o techsupport', count(c.techie)
+from customer c
+	inner join services_csv s
+		on c.customer_id = s.customer_id
+where c.techie = 'Yes'
+and techsupport = 'No'
