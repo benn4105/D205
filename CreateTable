@@ -1,14 +1,17 @@
 CREATE TABLE public.services_csv
 (
-		Customer_Id 		text NOT NULL,
+		Customer_Id 		text NOT NULL PRIMARY KEY,
 		InternetService 	text,
-		Phone 			varchar(3),
-		Multiple		varchar(3),
+		Phone 				varchar(3),
+		Multiple			varchar(3),
 		OnlineSecurity		varchar(3),
 		OnlineBackup		varchar(3),
 		DeviceProtection	varchar(3),
-		TechSupport		varchar(3),
-CONSTRAINT services_csv_PK PRIMARY KEY (Customer_Id)
+		TechSupport			varchar(3),
+		CONSTRAINT services_csv_PK FOREIGN KEY (Customer_Id)
+			REFERENCES public.customer (customer_id)
+			ON UPDATE NO ACTION
+			ON DELETE NO ACTION
 );
 ALTER TABLE public.services_csv
 OWNER TO POSTGRES;
