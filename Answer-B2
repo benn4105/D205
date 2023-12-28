@@ -1,0 +1,4 @@
+\\copy public.services_csv (customer_id, internetservice, phone, multiple, onlinesecurity, onlinebackup, deviceprotection, techsupport) 
+FROM 'C:/LabFiles/Services.csv' 
+DELIMITER ',' 
+CSV HEADER QUOTE '\"' ESCAPE '''';""
