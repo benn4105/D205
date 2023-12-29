@@ -1,21 +1,4 @@
-select 'total',count(techie) as total
-from customer
-where techie = 'Yes'
-
-union all
-
-select 'techies w/ internet',count(c.techie)
-from customer c
-	inner join services_csv s
-		on c.customer_id = s.customer_id
-where s.internetservice <> 'None'
-and c.techie = 'Yes'
-
-union all
-
-select 'techies w/o internet',count(c.techie)
-from customer c
-	inner join services_csv s
-		on c.customer_id = s.customer_id
-where s.internetservice = 'None'
-and c.techie = 'Yes'
+"?column?","total"
+"total","1679"
+"techies w/ internet","1330"
+"techies w/o internet","349"
