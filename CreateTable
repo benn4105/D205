@@ -1,14 +1,15 @@
 CREATE TABLE public.services_csv
 (
-		Customer_Id 		text NOT NULL PRIMARY KEY,
+		Customer_Id 		text NOT NULL,
 		InternetService 	text,
-		Phone 				varchar(3),
-		Multiple			varchar(3),
+		Phone 			varchar(3),
+		Multiple		varchar(3),
 		OnlineSecurity		varchar(3),
 		OnlineBackup		varchar(3),
 		DeviceProtection	varchar(3),
-		TechSupport			varchar(3),
-		CONSTRAINT services_csv_PK FOREIGN KEY (Customer_Id)
+		TechSupport		varchar(3),
+		PRIMARY KEY (Customer_Id),
+		CONSTRAINT services_csv_FK FOREIGN KEY (Customer_Id)
 			REFERENCES public.customer (customer_id)
 			ON UPDATE NO ACTION
 			ON DELETE NO ACTION
